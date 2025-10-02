@@ -14,7 +14,7 @@ I did not use any outside resources for this problem other than the
 **If you wanted to add RescueDrone...**
 - Create new "RescueDrone" and "RescueDroneFactory" classes.
   - In "RescueDrone," implement the "Drone" interface
-  - In "RescueDroneFactor," implement the "DroneFactory" interface.
+  - In "RescueDroneFactory," implement the "DroneFactory" interface.
 - In the "DroneManufacturer" interface, create the signature for a "configureRescueDrone" method.
 - In each Manufacturer class (i.e. "ManufacturerA" and "ManufacturerB," implement "configureRescueDrone" method, setting value specifications depending on the manufacturer.
 
