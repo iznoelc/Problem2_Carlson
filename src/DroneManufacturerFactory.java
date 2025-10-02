@@ -11,7 +11,7 @@ public class DroneManufacturerFactory {
         } else if (manufacturer.equalsIgnoreCase("B")){
             return new ManufacturerB();
         } else {
-            throw new IllegalArgumentException("Unknown wedding type");
+            throw new IllegalArgumentException("Unknown manufacturer type");
         }
     }
 }

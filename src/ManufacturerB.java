@@ -4,6 +4,7 @@ public class ManufacturerB implements DroneManufacturer {
      * for manufacturer B.
      * @return Drone, Configured agriculture drone for Manufacturer B
      */
+    @Override
     public Drone configureAgricultureDrone(){
         DroneFactory agricultureDroneFactory = new AgricultureDroneFactory();
         Drone agricultureDrone = agricultureDroneFactory.createDrone();
@@ -20,6 +21,7 @@ public class ManufacturerB implements DroneManufacturer {
      * for manufacturer B.
      * @return Drone, Configured delivery drone for Manufacturer B
      */
+    @Override
     public Drone configureDeliveryDrone(){
         DroneFactory deliveryDroneFactory = new DeliveryDroneFactory();
         Drone deliveryDrone = deliveryDroneFactory.createDrone();
@@ -36,6 +38,7 @@ public class ManufacturerB implements DroneManufacturer {
      * for manufacturer B.
      * @return Drone, Configured surveillance drone for Manufacturer B
      */
+    @Override
     public Drone configureSurveillanceDrone(){
         DroneFactory surveillanceDroneFactory = new SurveillanceDroneFactory();
         Drone surveillanceDrone = surveillanceDroneFactory.createDrone();
@@ -45,5 +48,23 @@ public class ManufacturerB implements DroneManufacturer {
         surveillanceDrone.setSpecialFeature("Real-Time Video Streaming");
 
         return surveillanceDrone;
+    }
+
+    /**
+     * Interacts with the drone abstract factory to create and configure a surveillance drone
+     * for manufacturer B.
+     * @return Drone, Configured surveillance drone for Manufacturer B
+     */
+    @Override
+    public Drone manufactureDrone(String drone){
+        if (drone.equalsIgnoreCase("agriculture")){
+            return configureAgricultureDrone();
+        } else if (drone.equalsIgnoreCase("delivery")){
+            return configureDeliveryDrone();
+        } else if (drone.equalsIgnoreCase("surveillance")){
+            return configureSurveillanceDrone();
+        } else {
+            throw new IllegalArgumentException("Unknown drone type");
+        }
     }
 }

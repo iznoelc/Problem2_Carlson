@@ -4,6 +4,7 @@ public class ManufacturerA implements DroneManufacturer {
      * for manufacturer A.
      * @return Drone, Configured agriculture drone for Manufacturer A
      */
+    @Override
     public Drone configureAgricultureDrone(){
         DroneFactory agricultureDroneFactory = new AgricultureDroneFactory();
         Drone agricultureDrone = agricultureDroneFactory.createDrone();
@@ -20,6 +21,7 @@ public class ManufacturerA implements DroneManufacturer {
      * for manufacturer A.
      * @return Drone, Configured delivery drone for Manufacturer A
      */
+    @Override
     public Drone configureDeliveryDrone(){
         DroneFactory deliveryDroneFactory = new DeliveryDroneFactory();
         Drone deliveryDrone = deliveryDroneFactory.createDrone();
@@ -36,6 +38,7 @@ public class ManufacturerA implements DroneManufacturer {
      * for manufacturer A.
      * @return Drone, Configured surveillance drone for Manufacturer A
      */
+    @Override
     public Drone configureSurveillanceDrone(){
         DroneFactory surveillanceDroneFactory = new SurveillanceDroneFactory();
         Drone surveillanceDrone = surveillanceDroneFactory.createDrone();
@@ -45,5 +48,18 @@ public class ManufacturerA implements DroneManufacturer {
         surveillanceDrone.setSpecialFeature("Panoramic Camera");
 
         return surveillanceDrone;
+    }
+
+    @Override
+    public Drone manufactureDrone(String drone){
+        if (drone.equalsIgnoreCase("agriculture")){
+            return configureAgricultureDrone();
+        } else if (drone.equalsIgnoreCase("delivery")){
+            return configureDeliveryDrone();
+        } else if (drone.equalsIgnoreCase("surveillance")){
+            return configureSurveillanceDrone();
+        } else {
+            throw new IllegalArgumentException("Unknown drone type");
+        }
     }
 }

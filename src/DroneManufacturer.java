@@ -16,4 +16,11 @@ public interface DroneManufacturer {
      * @return Drone, the configured surveillance drone
      */
     Drone configureSurveillanceDrone();
+
+    /**
+     * Manufacture the correct type of drone based on input
+     * @param drone, type of drone to be manufactured
+     * @return manufactured drone
+     */
+    Drone manufactureDrone(String drone);
 }

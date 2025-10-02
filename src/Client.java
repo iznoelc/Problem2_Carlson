@@ -26,30 +26,19 @@ public class Client {
         System.out.print("A >> Agriculture Drone | B >> Delivery Drone | C >> Surveillance Drone: ");
         droneChoice = scnr.nextLine();
 
-        // use the helper function & manufacturer to instantiate the right kind of drone
-        // and customize it according to manufacturer specifications
-        userDrone = manufactureDrone(droneChoice, droneManufacturer);
+        if (droneChoice.equalsIgnoreCase("A")){
+            droneChoice = "agriculture";
+        } else if (droneChoice.equals("B")){
+            droneChoice = "delivery";
+        } else if (droneChoice.equals("C")){
+            droneChoice = "surveillance";
+        }
+
+        // customize chosen drone according to manufacturer specifications
+        userDrone = droneManufacturer.manufactureDrone(droneChoice);
 
         // print final drone details
         System.out.println("DRONE CHOSEN -- PRINTING DETAILS...");
         userDrone.printDroneSpecifications();
-    }
-
-    /**
-     * Helper function for creating the right kind of drone based on user-input
-     * @return Drone, Correct type of drone for correct manufacturer based on user input
-     * @param droneChoice, the user's drone choice
-     * @param manufacturer, the manufacturer used to get the right kind of drone based on user's input
-     */
-    public static Drone manufactureDrone(String droneChoice, DroneManufacturer manufacturer){
-        if (droneChoice.equalsIgnoreCase("A")){
-            return manufacturer.configureAgricultureDrone();
-        } else if (droneChoice.equalsIgnoreCase("B")){
-            return manufacturer.configureDeliveryDrone();
-        } else if (droneChoice.equalsIgnoreCase("C")){
-            return manufacturer.configureSurveillanceDrone();
-        } else {
-            throw new IllegalArgumentException("Unknown drone type");
-        }
     }
 }
