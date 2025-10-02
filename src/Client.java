@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Client {
+public class Client {
     public static void main(String[] args){
         Scanner scnr = new Scanner(System.in);
 
