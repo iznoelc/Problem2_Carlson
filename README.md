@@ -18,9 +18,9 @@ I did not use any outside resources for this problem other than the
 - In the "DroneManufacturer" interface, create the signature for a "configureRescueDrone" method.
 - In each Manufacturer class (i.e. "ManufacturerA" and "ManufacturerB," implement "configureRescueDrone" method, setting value specifications depending on the manufacturer.
 
-  **If you wanted to add ManufacturerC...**
-  - Create a new "ManufacturerC" class.
-    - Implement the "DroneManufacturer" interface in the "ManufacturerC" class.
+**If you wanted to add ManufacturerC...**
+- Create a new "ManufacturerC" class.
+  - Implement the "DroneManufacturer" interface in the "ManufacturerC" class.
   - Update "DroneManufacturerFactory" class
     - Update the if/else statement to include (before the final else)
       - if (manufacturer.equalsIgnoreCase("C")){ return new ManufacturerC(); } 
