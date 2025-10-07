@@ -4,6 +4,7 @@ Drone Management System HW1 Problem
 ## RESOURCES
 - Factory/Abstract Factory slides
 - Week5/IkeaFurniture and Week5/FactoryAbstract practice problems (as reference)
+- Compared code with Esperanza Paulino after each coding it up individually
 
 ## EXPLANATION OF DESIGN CHOICES
 - **Factory** method was used to handle the manufacturers for flexibility and extensibility. Using the factory method, the creation of a manufacturer object does not require modification of the client code. Thus, the code can easily be extended to implement new manufacturers. Since each drone will have different specifications per manufacturer, the drones specifications can be set in the concrete Manufacturer classes, while the Manufacturer Factory determines which manufacturer to use. 
