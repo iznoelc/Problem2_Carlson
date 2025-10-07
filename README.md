@@ -2,7 +2,6 @@
 Drone Management System HW1 Problem
 
 ## RESOURCES
-I did not use any outside resources for this problem other than the 
 - Factory/Abstract Factory slides
 - Week5/IkeaFurniture and Week5/FactoryAbstract practice problems (as reference)
 
